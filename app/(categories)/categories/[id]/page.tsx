@@ -23,7 +23,7 @@ export default async function CategoryDetail({ params }: { params: IParams }) {
   return (
     <div className={styles.category_page}>
       <h1>{categoryTitle.results.list_name}</h1>
-      <div className={styles.category_item}>
+      <div>
         <Suspense fallback={<h2>Loading movie info</h2>}>
           <BookInfo id={id} />
         </Suspense>
