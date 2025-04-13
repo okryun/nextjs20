@@ -1,0 +1,26 @@
+.main_box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.category_box {
+  margin: 15px;
+  display: flex;
+}
+
+.category_box a {
+  font-size: 20px;
+  padding: 20px;
+  border: 2px solid #7ed6df;
+  border-radius: 15px;
+}
+
+.category_box a:hover {
+  background-color: #7ed6df;
+  color: white;
+}
