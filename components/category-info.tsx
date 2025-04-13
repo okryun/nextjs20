@@ -1,18 +1,26 @@
 import styles from "../app/styles/category.module.css";
 
-export const API_URL = "https://books-api.nomadcoders.workers.dev";
+const API_URL = "https://books-api.nomadcoders.workers.dev";
 
 export async function getCategories(id: string) {
   const response = await fetch(`${API_URL}/list?name=${id}`);
   return response.json();
 }
 
+type ItemType = {
+  book_image: string;
+  primary_isbn13: string;
+  title: string;
+  author: string;
+  amazon_product_url: string;
+};
+
 export default async function BookInfo({ id }: { id: string }) {
   const category = await getCategories(id);
   console.log(category);
   return (
     <div className={styles.category_box}>
-      {category.results.books.map((book) =>
+      {category.results.books.map((book: ItemType) =>
         book.book_image ? (
           <div key={book.primary_isbn13} className={styles.category_item}>
             <img src={book.book_image} />
